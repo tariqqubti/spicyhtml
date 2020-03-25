@@ -91,6 +91,5 @@ export const sorted = (src: string): Ref[] => {
 export const first = (src: string): Ref => {
   const refs = sorted(src);
   if(!refs || !refs.length) return null;
-  return refs.reduce((min, ref) =>
-    ref.open.index < min.open.index ? ref : min);
+  return refs[0];
 };
