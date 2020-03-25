@@ -4,7 +4,7 @@ Wouldn't it be nice to have...?
 
 ```
 my-awesome-site
-  |--> coms
+  |--> com
     |-- Hero.html
     |-- Document.html
     |-- Sidebar.html
@@ -39,7 +39,7 @@ my-awesome-site
 ```
 
 ```html
-<!-- coms/Document.html -->
+<!-- com/Document.html -->
 
 <html>
   <head>
@@ -61,7 +61,7 @@ my-awesome-site
 ```
 
 ```html
-<!-- coms/Hero.html -->
+<!-- com/Hero.html -->
 
 <style>
   .hero {
