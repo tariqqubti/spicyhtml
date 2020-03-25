@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "CommonJS",
+    "outDir": "lib",
+    "sourceMap": true
+  },
+  "include": ["src", "example"]
+}
