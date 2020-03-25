@@ -37,12 +37,12 @@ export default class File {
   get scripts() {
     const scripts = this.instances[0].scripts;
     if(!scripts) return '';
-    return `/* ${this.name} */\n` + scripts;
+    return `/* ${this.id} */\n` + scripts;
   }
 
   get styles() {
     const styles = this.instances[0].styles;
     if(!styles) return '';
-    return `/* ${this.name} */\n` + styles;
+    return `/* ${this.id} */\n` + styles;
   }
 }
