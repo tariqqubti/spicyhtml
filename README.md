@@ -30,17 +30,6 @@ my-awesome-site
 ```
 
 ```html
-<!-- pages/about.html -->
-
-<com.Document
-  title="About"
-  desc="my-awesome-site-about"
->
-  About page
-</com.Document>
-```
-
-```html
 <!-- com/Document.html -->
 
 <html>
@@ -52,7 +41,6 @@ my-awesome-site
     <title>__title__</title>
   </head>
   <body>
-    <com.Header />
     <com.Sidebar />
     <h1>__title__</h1>
     <com.Main>
@@ -98,6 +86,44 @@ build({
   },
   output: path.resolve('static'),
 });
+```
+
+And output
+```html
+<!-- index.html -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="my-awesome-site-home">
+    <title>Home</title>
+    <style>
+      .hero {
+        padding: 2rem;
+      }
+      .slide {
+        background-color: __primary__;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">...</div>
+    <h1>Home</h1>
+    <main>
+      <div class='hero'>
+        <div class='slide'>Slide one</div>
+        <div class='slide'>Slide two</div>
+      </div>
+      Hello and welcome to My awesome site
+    </main>
+    <script>
+      (function() { /* com.Hero */
+        const slides = document.querySelectorAll('.slide');
+      })();
+    </script>
+  <body>
+</html>
 ```
 
 ## Makes sense?!
