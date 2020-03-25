@@ -95,7 +95,8 @@ build({
   props: {
     name: 'My awesome site',
     primary: '#333',
-  }
+  },
+  output: path.resolve('static'),
 });
 ```
 
@@ -147,6 +148,7 @@ module.exports = {
   entry: 'pages.index',
   props: {
     primary: '#ccc',
-  }
+  },
+  output: 'static',
 }
 ```
