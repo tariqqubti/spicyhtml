@@ -38,10 +38,10 @@ class Ref {
       return this.close.index + this.close.len;
     return this.open.index + this.open.len;
   }
-  atts(src: string) {
+  get atts() {
     const atts = new Map<string, string>();
-    if(!src) return atts;
-    const clean = src.trim()
+    if(!this.open.atts) return atts;
+    const clean = this.open.atts.trim()
       .replace(/\s+=\s+/g, '=')
       .replace(/\s+/g, ' ');
     if(!clean) return atts;
@@ -79,13 +79,6 @@ const parse = (tags: Tag[]): Ref[] => {
   return refs;
 };
 
-export const first = (src: string): Ref => {
-  const refs = parse(tokenize(src));
-  if(!refs || !refs.length) return null;
-  return refs.reduce((min, ref) =>
-    ref.open.index < min.open.index ? ref : min);
-};
-
 export const sorted = (src: string): Ref[] => {
   const refs = parse(tokenize(src));
   return refs.sort((a, b) => {
@@ -93,4 +86,11 @@ export const sorted = (src: string): Ref[] => {
     if(a.start > b.start) return 1;
     return 0;
   });
+};
+
+export const first = (src: string): Ref => {
+  const refs = sorted(src);
+  if(!refs || !refs.length) return null;
+  return refs.reduce((min, ref) =>
+    ref.open.index < min.open.index ? ref : min);
 };

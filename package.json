@@ -2,6 +2,7 @@
   "name": "spicyhtml",
   "version": "0.1.0",
   "description": "Html copy-paster",
+  "main": "lib/src/index",
   "scripts": {
     "build": "tsc"
   },

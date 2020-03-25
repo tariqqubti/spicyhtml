@@ -10,11 +10,28 @@
 /* Container.html */
 
   aside {color: #333}
-</style></head>
+/* Item.html */
+
+  .sidebar-item {
+    color: red;
+  }
+</style>
+</head>
 <body>
   <!-- author Tariq Qubti -->
   <header>
   <h1>I'm the header</h1>
+
+  <ul>
+  
+    <li>
+  <a href="/">Home</a>
+</li>
+    <li>
+  <a href="/about">About</a>
+</li>
+  
+</ul>
 </header>
   <section>
   I'm the hero section
@@ -22,7 +39,7 @@
   <main>
   <h1>Home</h1>
   <h2>desc is Home page</h2>
-  attribute is hello>
+  attribute is hello
   Here goes main
   
     
@@ -35,16 +52,31 @@
 
 <aside>
   I'm an aside
-  <com.aside.Item to="/home">Home</com.aside.Item>
-  <com.aside.Item to="/about">About</com.aside.Item>
+  
+
+<li class='sidebar-item'>
+  <a href="/home">Home</a>
+</li>
+
+  
+
+<li class='sidebar-item'>
+  <a href="/about">About</a>
+</li>
+
 </aside>
 
-<script>
-  const aside = document.querySelector('aside');
-  console.log(aside.innerHTML);
-</script>
+
 
 <script>
-</script></body>
+/* Container.html */
+(function() {
+
+  const aside = document.querySelector('aside');
+  console.log(aside.innerHTML);
+
+})();
+</script>
+</body>
 </html>
 

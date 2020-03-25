@@ -1,5 +1,4 @@
 import * as rand from '../rand';
-import * as maps from '../maps';
 import exps from '../exps';
 import File from './File';
 
@@ -19,26 +18,30 @@ export default class Instance {
     public file: File,
     props: Map<string, string>
   ) {
-    this.src = file.content
+    this.src = file.content;
+    this.src = this.src
       .replace(exps.slotExp, (full, key) => {
         if(props.has(key))
           return props.get(key);
         return full;
-      })
-      .replace(exps.literalExp, (full, q, inner) => {
-        const marker = `__${file.id}-${rand.str(13)}__`;
-        this.literalsList.push({marker, full, inner});
-        return marker;
-      })
+      });
+    this.src = this.src
       .replace(exps.scriptExp, (full, tag, inner) => {
         if(exps.srcAttExp.test(full))
           return full;
         this.scriptsList.push(inner);
         return '';
-      })
+      });
+    this.src = this.src
       .replace(exps.styleExp, (full, tag, inner) => {
         this.stylesList.push(inner);
         return '';
+      });
+    this.src = this.src
+      .replace(exps.literalExp, (full, q, inner) => {
+        const marker = `__${file.id}-${rand.str(13)}__`;
+        this.literalsList.push({marker, full, inner});
+        return marker;
       });
   }
 
