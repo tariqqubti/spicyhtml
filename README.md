@@ -1,5 +1,7 @@
 ## Spicy Html
 
+![Spicy Html Logo](./resources/spicyhtml_logo.png)
+
 Wouldn't it be nice to have...?
 
 ```
