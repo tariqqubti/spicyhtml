@@ -123,7 +123,8 @@ build({
   props: {
     name: 'My awesome site',
     primary: '#333',
-  }
+  },
+  output: path.resolve('static'),
 });
 ```
 Using npm scripts (*not implemented yet*):
