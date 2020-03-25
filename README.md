@@ -128,7 +128,7 @@ build({
 ```
 Using npm scripts (*not implemented yet*):
 
-`package.json`
+in `package.json`
 ```json
 {
   "scripts": {
@@ -136,8 +136,9 @@ Using npm scripts (*not implemented yet*):
   }
 }
 ```
-`spicy.config.js`
 ```js
+// spicy.config.js
+
 module.exports = {
   root: 'src',
   entry: 'pages.index',
