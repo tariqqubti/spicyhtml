@@ -1,6 +1,6 @@
 ![Spicy Html Logo](./resources/spicyhtml_logo.png)
 
-## Spicy Html (A spicy html compiler)
+## Spicy Html (A spicy html builder)
 
 Wouldn't it be nice to have...?
 

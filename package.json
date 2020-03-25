@@ -1,7 +1,7 @@
 {
   "name": "spicyhtml",
   "version": "0.1.0",
-  "description": "Spicy html compiler",
+  "description": "Spicy html builder",
   "main": "lib/src/index",
   "scripts": {
     "build": "tsc"
