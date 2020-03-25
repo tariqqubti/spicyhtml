@@ -113,6 +113,21 @@ node >= 10
 ```sh
 npm install spicyhtml --save
 ```
+Programmatically:
+```js
+const {build} = require('spicyhtml');
+
+build({
+  root: 'my-awesome-site',
+  entry: 'pages.index',
+  props: {
+    name: 'My awesome site',
+    primary: '#333',
+  }
+});
+```
+Using npm scripts (*not implemented yet*):
+
 `package.json`
 ```json
 {
@@ -130,16 +145,4 @@ module.exports = {
     primary: '#ccc',
   }
 }
-```
-
-or programmatically
-```js
-build({
-  root: 'my-awesome-site',
-  entry: 'pages.index',
-  props: {
-    name: 'My awesome site',
-    primary: '#333',
-  }
-});
 ```
