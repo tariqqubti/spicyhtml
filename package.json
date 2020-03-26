@@ -1,6 +1,6 @@
 {
   "name": "spicyhtml",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Spicy html builder",
   "main": "lib/src/index",
   "scripts": {
