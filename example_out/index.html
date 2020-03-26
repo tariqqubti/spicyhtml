@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Home page">
+  <title>Home</title>
+  
+<style>
+/* com.Document */
+
+    html, body {height: 100%; padding: 0; margin: 0}
+    section, div, p, main, header {box-sizing: border-box;}
+  /* com.Header */
+
+  .header {
+    background-color: lightcyan;
+    padding: 15px;
+    padding-left: 215px;
+  }
+/* com.Main */
+
+  main {
+    background-color: lightblue;
+    padding: 15px;
+    padding-left: 215px;
+  }
+/* com.sidebar.Container */
+
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0;
+    width: 200px; height: 100%;
+    padding: 15px;
+    background-color: #eee;
+  }
+/* com.sidebar.Item */
+
+  .sidebar-item {
+    background-color: #f44;
+    margin: 15px;
+  }
+/* com.Hero */
+
+  .hero {
+    background-color: lightcoral;
+  }
+</style>
+</head>
+<body>
+  <!-- author Tariq Qubti -->
+  
+
+<header class="header">
+  <p>Header</p>
+  <img src="img/logo.png" />
+
+  <ul>
+  <p>Header List</p>
+  
+    <li>
+  <a href="/">Home</a>
+</li>
+    <li>
+  <a href="/about">About</a>
+</li>
+    <li>
+  <a href="/contact">Contact</a>
+</li>
+  
+</ul>
+</header>
+  
+
+<main>
+  <p>Main</p>
+  <h1>Home</h1>
+  <h2>Home page</h2>
+  
+    
+  
+
+<section class="hero">
+  <p>Hero</p>
+  <div class="slide">Slide 1</div>
+  <div class="slide">Slide 2</div>
+</section>
+
+
+  Hello, world!
+
+  
+</main>
+
+  
+
+<div class="sidebar">
+  <p>Sidebar</p>
+  
+
+<li class="sidebar-item">
+  __name__
+  <a href="/home">Home</a>
+</li>
+
+  
+
+<li class="sidebar-item">
+  __name__
+  <a href="/about">About</a>
+</li>
+
+</div>
+
+
+
+<script>
+/* com.sidebar.Container */
+(function() {
+
+  const items = document.querySelector('.sidebar-item');
+  console.log(items.innerHTML);
+
+})();
+/* com.Hero */
+(function() {
+
+  const slides = document.querySelector('.slide');
+
+})();
+</script>
+</body>
+</html>
+

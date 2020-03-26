@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import * as watcher from './watcher';
 import * as refs from './refs';
 import * as maps from './maps';
 import * as arr from './arr';
@@ -16,6 +17,12 @@ class Config {
   props: {[i: string]: string} = {};
   output: string = 'dist';
 }
+
+export const watch = ({
+  root, entry, props, output
+}: Config) => {
+  watcher.start(root, () => build({root, entry, props, output}));
+};
 
 export const build = ({
   root, entry, props, output

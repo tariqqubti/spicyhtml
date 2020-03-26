@@ -1,14 +1,18 @@
 import * as path from 'path';
-import {build} from '../src';
+import {watch} from '../src';
 
 const config = {
   root: 'example',
   entry: ['pages.index', 'pages.about'],
   props: {
     author: 'Tariq Qubti',
-    primary: '#333',
-    secondary: '#e33',
+    primary: '#eee',
+    secondary: '#f44',
   },
-  output: path.resolve('example', '_out'),
+  /**
+   * TODO: Check output dir is outside root
+   * to prevent infinite loop
+   */
+  output: path.resolve('example_out'),
 };
-build(config);
+watch(config);

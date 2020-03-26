@@ -1,0 +1,20 @@
+<style>
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0;
+    width: 200px; height: 100%;
+    padding: 15px;
+    background-color: __primary__;
+  }
+</style>
+
+<div class="sidebar">
+  <p>Sidebar</p>
+  <com.sidebar.Item to="/home">Home</com.sidebar.Item>
+  <com.sidebar.Item to="/about">About</com.sidebar.Item>
+</div>
+
+<script>
+  const items = document.querySelector('.sidebar-item');
+  console.log(items.innerHTML);
+</script>

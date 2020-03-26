@@ -20,11 +20,9 @@ export default class Instance {
   ) {
     this.src = file.content;
     this.src = this.src
-      .replace(exps.slotExp, (full, key) => {
-        if(props.has(key))
-          return props.get(key);
-        return full;
-      });
+      .replace(exps.slotExp, (full, key) =>
+        props.has(key) ? props.get(key) : full
+      );
     this.src = this.src
       .replace(exps.scriptExp, (full, tag, inner) => {
         if(exps.srcAttExp.test(full))
@@ -45,7 +43,7 @@ export default class Instance {
       });
   }
 
-  // Smelly justInner?
+  // Smelly onlyInner?
   applyLiterals(src: string, onlyInner: boolean = false) {
     return this.literalsList.reduce(
       (acc, {marker, full, inner}) => {

@@ -12,5 +12,7 @@
   "devDependencies": {
     "@types/node": "^13.7.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "chokidar": "^3.3.1"
+  }
 }
