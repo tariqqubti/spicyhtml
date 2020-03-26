@@ -1,8 +1,8 @@
 {
   "name": "spicyhtml",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Spicy html builder",
-  "main": "lib/src/index",
+  "main": "js/src/index",
   "scripts": {
     "build": "tsc"
   },
