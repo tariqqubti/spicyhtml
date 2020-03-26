@@ -7,7 +7,7 @@
       "name": "Launch Current",
       "program": "${file}",
       "preLaunchTask": "npm: build",
-      "outFiles": ["${workspaceFolder}/lib/**/*.js"],
+      "outFiles": ["${workspaceFolder}/js/**/*.js"],
     },
     {
       "type": "node",
@@ -15,7 +15,7 @@
       "name": "Launch Example",
       "program": "${workspaceFolder}/example/index.ts",
       "preLaunchTask": "npm: build",
-      "outFiles": ["${workspaceFolder}/lib/**/*.js"],
+      "outFiles": ["${workspaceFolder}/js/**/*.js"],
     }
   ]
 }
