@@ -2,7 +2,7 @@
 
 ## Spicy Html (A spicy html builder)
 
-A tool that helps encapsulate html components and makes it easy to reference them from other html components to enabling reuse.
+A tool that helps encapsulate html components and makes it easy to reference them from other html components for reuse.
 It also enables customization of html components using props.
 It will also group all styles and scripts during building.
 
