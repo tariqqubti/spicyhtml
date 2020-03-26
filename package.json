@@ -14,5 +14,10 @@
   },
   "dependencies": {
     "chokidar": "^3.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tariqqubti/spicyhtml.git"
+  },
+  "homepage": "https://github.com/tariqqubti/spicyhtml#readme"
 }
