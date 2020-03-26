@@ -26,6 +26,11 @@
     padding: 15px;
     padding-left: 215px;
   }
+/* com.Hero */
+
+  .hero {
+    background-color: lightcoral;
+  }
 /* com.sidebar.Container */
 
   .sidebar {
@@ -41,11 +46,6 @@
     background-color: #f44;
     margin: 15px;
   }
-/* com.Hero */
-
-  .hero {
-    background-color: lightcoral;
-  }
 </style>
 </head>
 <body>
@@ -60,12 +60,15 @@
   <p>Header List</p>
   
     <li>
+  Header List
   <a href="/">Home</a>
 </li>
     <li>
+  Header List
   <a href="/about">About</a>
 </li>
     <li>
+  Header List
   <a href="/contact">Contact</a>
 </li>
   
@@ -90,34 +93,32 @@
   <p>Sidebar</p>
   
 
-<li class="sidebar-item">
-  __name__
+<div class="sidebar-item">
   <a href="/home">Home</a>
-</li>
+</div>
 
   
 
-<li class="sidebar-item">
-  __name__
+<div class="sidebar-item">
   <a href="/about">About</a>
-</li>
+</div>
 
 </div>
 
 
 
 <script>
+/* com.Hero */
+(function() {
+
+  const slides = document.querySelector('.slide');
+
+})();
 /* com.sidebar.Container */
 (function() {
 
   const items = document.querySelector('.sidebar-item');
   console.log(items.innerHTML);
-
-})();
-/* com.Hero */
-(function() {
-
-  const slides = document.querySelector('.slide');
 
 })();
 </script>

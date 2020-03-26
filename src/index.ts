@@ -49,8 +49,8 @@ const compile = (
   while(ref) {
     const atts = instance.applyLiteralsToAtts(ref.atts);
     const merged = maps.merge(props, atts);
+    merged.set('inner', instance.applyLiterals(ref.inner(output)));
     let built = compile(ref.name, merged);
-    built = built.replace(/__inner__/g, ref.inner(output));
     output = str.insertAt(built, output, ref.start, ref.end);
     ref = refs.first(output);
   }
