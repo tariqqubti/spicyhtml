@@ -3,7 +3,7 @@ import {watch} from '../src';
 
 const config = {
   root: 'example',
-  entry: ['pages.index', 'pages.about'],
+  entry: ['pages.index', 'pages.about', 'pages.contact'],
   props: {
     author: 'Tariq Qubti',
     primary: '#eee',
