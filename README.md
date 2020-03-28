@@ -1,4 +1,4 @@
-![Spicy Html Logo](./resources/spicyhtml_logo.png)
+![Spicy Html Logo](./resources/spicyhtml-logo.png)
 
 ## Spicy Html (A spicy html builder)
 
@@ -185,7 +185,7 @@ All scripts will be wrapped with a self invoking function, so you don't need to 
 
 ## Example
 
-- There is a [small example](./example) in this repo.
+- There is a [small example](https://github.com/tariqqubti/spicyhtml/tree/master/example) in this repo.
 - Here is a quick example:
 
 ```
