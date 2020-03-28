@@ -27,17 +27,21 @@ class Ref {
     public open: Tag,
     public close: Tag,
   ) {}
+
   get name() {
     return this.open.name;
   }
+
   get start() {
     return this.open.index;
   }
+
   get end() {
     if(this.close)
       return this.close.index + this.close.len;
     return this.open.index + this.open.len;
   }
+
   get atts() {
     const atts = new Map<string, string>();
     if(!this.open.atts) return atts;
@@ -52,6 +56,7 @@ class Ref {
     });
     return atts;
   }
+
   inner(src: string) {
     if(!this.close) return '';
     return src.substring(

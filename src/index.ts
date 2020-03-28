@@ -48,8 +48,12 @@ const compile = (
   let ref = refs.first(output);
   while(ref) {
     const atts = instance.applyLiteralsToAtts(ref.atts);
+    const inner = ref.inner(output);
+    if(atts.has('inner') && inner)
+      atts.delete('inner');
     const merged = maps.merge(props, atts);
-    merged.set('inner', instance.applyLiterals(ref.inner(output)));
+    if(!atts.has('inner'))
+      merged.set('inner', instance.applyLiterals(inner));
     let built = compile(ref.name, merged);
     output = str.insertAt(built, output, ref.start, ref.end);
     ref = refs.first(output);
