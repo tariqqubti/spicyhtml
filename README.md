@@ -177,7 +177,7 @@ All scripts will be wrapped with a self invoking function, so you don't need to 
 
 - Encapsulate static html files using components.
 - Reuse static html files by referencing them from other files.
-- Small file sizes, check [Spicy Html](https://spicyhtml.com) file sizes on dev tools, it's built with Spicy Html.
+- Small file sizes, check [Spicy Html](https://tariqqubti.github.io/spicyhtml_website/) file sizes on dev tools, it's built with Spicy Html.
 - Keeps the browser happy.
 - The fact of the matter is that most users will view your website on bloated 8GB RAM machines, those machines do not like too much JavaScript.
 - Work with html not against it, this tool is just a small step that makes working with static html a pleasure.
