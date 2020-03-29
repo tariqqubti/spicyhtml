@@ -11,7 +11,7 @@ import Store from './store/Store';
 // Singleton across builds, clears cache on watch
 const store = new Store;
 
-class Config {
+export class Config {
   root: string = 'src';
   entry: string | string[] = 'index';
   props: {[i: string]: string} = {};
@@ -29,13 +29,26 @@ export const build = ({
 }: Config = new Config) => {
   store.clear();
   store.root = root;
+
   if(typeof entry === 'string')
     entry = [entry];
+
+  const srcs = [];
   entry.forEach(id => {
     const src = finish(compile(id, maps.fromObj(props)));
-    const outputPath = path.resolve(output, arr.last(id.split('.')));
-    fs.writeFileSync(outputPath + '.html', src);
+    srcs.push({id, src});
   });
+
+  if(output) {
+    srcs.forEach(({id, src}) => {
+      const outputPath = path.resolve(output, id + '.html');
+      fs.writeFileSync(outputPath, src);
+    })
+  } else {
+    if(srcs.length === 1)
+      return srcs[0]
+    return srcs;
+  }
 };
 
 const compile = (

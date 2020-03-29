@@ -5,7 +5,6 @@ var path = require("path");
 var watcher = require("./watcher");
 var refs = require("./refs");
 var maps = require("./maps");
-var arr = require("./arr");
 var str = require("./str");
 var msgs_1 = require("./msgs");
 var Store_1 = require("./store/Store");
@@ -20,6 +19,7 @@ var Config = /** @class */ (function () {
     }
     return Config;
 }());
+exports.Config = Config;
 exports.watch = function (_a) {
     var root = _a.root, entry = _a.entry, props = _a.props, output = _a.output;
     watcher.start(root, function () { return exports.build({ root: root, entry: entry, props: props, output: output }); });
@@ -30,11 +30,23 @@ exports.build = function (_a) {
     store.root = root;
     if (typeof entry === 'string')
         entry = [entry];
+    var srcs = [];
     entry.forEach(function (id) {
         var src = finish(compile(id, maps.fromObj(props)));
-        var outputPath = path.resolve(output, arr.last(id.split('.')));
-        fs.writeFileSync(outputPath + '.html', src);
+        srcs.push({ id: id, src: src });
     });
+    if (output) {
+        srcs.forEach(function (_a) {
+            var id = _a.id, src = _a.src;
+            var outputPath = path.resolve(output, id + '.html');
+            fs.writeFileSync(outputPath, src);
+        });
+    }
+    else {
+        if (srcs.length === 1)
+            return srcs[0];
+        return srcs;
+    }
 };
 var compile = function (id, props) {
     var file = store.put(id);
