@@ -1,6 +1,6 @@
 {
   "name": "spicyhtml",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Spicy html builder",
   "main": "js/src/index",
   "scripts": {
@@ -19,5 +19,5 @@
     "type": "git",
     "url": "https://github.com/tariqqubti/spicyhtml.git"
   },
-  "homepage": "https://github.com/tariqqubti/spicyhtml#readme"
+  "homepage": "https://tariqqubti.github.io/spicyhtml_website"
 }

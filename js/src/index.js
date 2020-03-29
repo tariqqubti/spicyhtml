@@ -8,6 +8,7 @@ var maps = require("./maps");
 var str = require("./str");
 var msgs_1 = require("./msgs");
 var Store_1 = require("./store/Store");
+// TODO: Refactor
 // Singleton across builds, clears cache on watch
 var store = new Store_1.default;
 var Config = /** @class */ (function () {
