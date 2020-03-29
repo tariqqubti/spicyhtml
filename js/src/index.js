@@ -21,7 +21,7 @@ var Config = /** @class */ (function () {
 }());
 exports.Config = Config;
 exports.watch = function (_a) {
-    var root = _a.root, entry = _a.entry, props = _a.props, output = _a.output;
+    var _b = _a === void 0 ? new Config : _a, root = _b.root, entry = _b.entry, props = _b.props, output = _b.output;
     watcher.start(root, function () { return exports.build({ root: root, entry: entry, props: props, output: output }); });
 };
 exports.build = function (_a) {
@@ -35,12 +35,15 @@ exports.build = function (_a) {
         var src = finish(compile(id, maps.fromObj(props)));
         srcs.push({ id: id, src: src });
     });
-    if (output) {
+    if (typeof output === 'string') {
         srcs.forEach(function (_a) {
             var id = _a.id, src = _a.src;
             var outputPath = path.resolve(output, id + '.html');
             fs.writeFileSync(outputPath, src);
         });
+    }
+    else if (typeof output === 'function') {
+        output(srcs.length === 1 ? srcs[0] : srcs);
     }
     else {
         if (srcs.length === 1)

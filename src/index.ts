@@ -3,10 +3,11 @@ import * as path from 'path';
 import * as watcher from './watcher';
 import * as refs from './refs';
 import * as maps from './maps';
-import * as arr from './arr';
 import * as str from './str';
 import msgs from './msgs';
 import Store from './store/Store';
+
+// TODO: Refactor
 
 // Singleton across builds, clears cache on watch
 const store = new Store;
@@ -15,12 +16,12 @@ export class Config {
   root: string = 'src';
   entry: string | string[] = 'index';
   props: {[i: string]: string} = {};
-  output: string = 'dist';
+  output: string | Function = 'dist';
 }
 
 export const watch = ({
   root, entry, props, output
-}: Config) => {
+}: Config = new Config) => {
   watcher.start(root, () => build({root, entry, props, output}));
 };
 
@@ -39,14 +40,16 @@ export const build = ({
     srcs.push({id, src});
   });
 
-  if(output) {
+  if(typeof output === 'string') {
     srcs.forEach(({id, src}) => {
       const outputPath = path.resolve(output, id + '.html');
       fs.writeFileSync(outputPath, src);
-    })
+    });
+  } else if(typeof output === 'function') {
+    output(srcs.length === 1 ? srcs[0] : srcs);
   } else {
     if(srcs.length === 1)
-      return srcs[0]
+      return srcs[0];
     return srcs;
   }
 };
