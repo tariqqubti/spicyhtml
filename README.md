@@ -201,7 +201,7 @@ All scripts will be wrapped with a self invoking function, so you don't need to 
 ## Example
 
 - There is a [small example](https://github.com/tariqqubti/spicyhtml/tree/master/example) in this repo.
-- This libraries [website](https://tariqqubti.github.io/spicyhtml_website) is open source, you can visit its [repository](https://github.com/tariqqubti/spicyhtml_website)
+- Spicy Html's [website](https://tariqqubti.github.io/spicyhtml_website) is open source, you can checkout its source code at this [repository](https://github.com/tariqqubti/spicyhtml_website)
 - Here is a quick example:
 
 ```
