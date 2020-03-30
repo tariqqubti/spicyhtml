@@ -1,6 +1,6 @@
 ![Spicy Html Logo](./resources/spicyhtml-logo.png)
 
-## Spicy Html (A spicy html builder)
+## [Spicy Html](https://tariqqubti.github.io/spicyhtml_website/) (A spicy html builder)
 
 A tool that helps encapsulate html components and makes it easy to reference and compose them.
 
@@ -22,6 +22,21 @@ Programmatically:
 const {build} = require('spicyhtml');
 
 build({
+  root: 'my-awesome-site',
+  entry: 'pages.index',
+  props: {
+    name: 'My awesome site',
+    primary: '#333',
+  },
+  output: path.resolve('static'),
+});
+```
+
+Or using a watcher
+```js
+const {watch} = require('spicyhtml');
+
+watch({
   root: 'my-awesome-site',
   entry: 'pages.index',
   props: {
@@ -89,7 +104,7 @@ You can send values to components in order to customize them.
 For example if the reference:
 
 ```html
-<com.Field type="text" Label="Name" />
+<com.Field type="text" label="Name" />
 ```
 
 And the component:
@@ -114,7 +129,7 @@ The output would be:
 </div>
 ```
 
-All \_\_prop_name\_\_ values inside the component will be replaced with what was sent in the reference.
+All `__prop_name__` values inside the component will be replaced with what was sent in the reference.
 
 Prop names are surrounded by two underscores.
 
@@ -143,7 +158,7 @@ Though if the reference tag is not self-closing and actually have something insi
 
 ## Styles and Scripts
 
-The builder will cache all styles and scripts tags it encounters during building, and add the first instance of them in the end of the building process.
+The builder will cache all styles and scripts tags it encounters during building, and add the first instance of them at the end of the building process.
 
 Adding the styles just before the ending of the `<head>` tag, and scripts just before the ending of the `<body>` tag.
 
