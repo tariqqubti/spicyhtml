@@ -33,6 +33,9 @@ build({
 ```
 
 Or using a watcher
+
+Make sure the output directory is outside the root directory when using the watcher to prevent infinite loop
+
 ```js
 const {watch} = require('spicyhtml');
 
